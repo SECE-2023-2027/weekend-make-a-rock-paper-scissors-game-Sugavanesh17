@@ -1,0 +1,216 @@
+body {
+    margin: 0;
+    height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23d5ab, #23a6d5);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+@keyframes gradientBG {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+.game-container {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 25px;
+    padding: 50px 60px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    width: 380px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+h1 {
+    font-size: 2.8rem;
+    margin-bottom: 40px;
+    letter-spacing: 4px;
+    font-weight: 900;
+    text-shadow: 0 0 10px rgba(255,255,255,0.8);
+}
+
+.choices {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+
+.choice {
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 15px;
+    padding: 20px 15px;
+    cursor: pointer;
+    width: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.1rem;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    transition: all 0.4s ease;
+    border: 1px solid transparent;
+    user-select: none;
+}
+
+.choice img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+    filter: drop-shadow(0 0 3px rgba(0,0,0,0.5));
+}
+
+.choice:hover {
+    background: rgba(255, 255, 255, 0.6);
+    color: #23a6d5;
+    transform: scale(1.2) rotate(5deg);
+    box-shadow: 0 0 15px #23a6d5, 0 0 30px #23a6d5;
+    border-color: #23a6d5;
+}
+
+.result {
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    min-height: 40px;
+    text-shadow: 0 0 8px rgba(0,0,0,0.5);
+    transition: color 0.5s ease;
+}
+
+.status {
+    margin-bottom: 15px;
+}
+
+.status.animate-win {
+    color: #00ff99;
+    animation: glow 1.5s ease infinite alternate;
+}
+
+.status.animate-lose {
+    color: #ff4d4d;
+    animation: glow 1.5s ease infinite alternate;
+}
+
+.status.animate-draw {
+    color: #ffff66;
+    animation: glow 1.5s ease infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 5px rgba(255,255,255,0.7), 0 0 10px rgba(255,255,255,0.5);
+    }
+    to {
+        text-shadow: 0 0 20px rgba(255,255,255,1), 0 0 30px rgba(255,255,255,0.8);
+    }
+}
+
+
+.hands-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 20px;
+    height: 100px;
+    align-items: center;
+}
+
+.hand {
+    width: 80px;
+    height: 80px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.hand img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.hand.show {
+    opacity: 1;
+}
+
+@keyframes shake {
+    0% { transform: rotate(0deg); }
+    20% { transform: rotate(20deg); }
+    40% { transform: rotate(-20deg); }
+    60% { transform: rotate(20deg); }
+    80% { transform: rotate(-20deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.hand.shake {
+    animation: shake 1s ease;
+}
+
+#reset-btn {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #764ba2;
+    border: none;
+    border-radius: 25px;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(118, 75, 162, 0.4);
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#reset-btn:hover {
+    background: #5a357a;
+    transform: scale(1.05);
+}
+
+.game-container {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 40px 50px;
+    box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.5);
+    width: 360px;
+}
+
+h1 {
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+    letter-spacing: 3px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.status {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+
+.scoreboard {
+    font-size: 1.2rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+
+.choice {
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+    font-weight: 700;
+    font-size: 1rem;
+    transition: background 0.4s ease, transform 0.3s ease;
+}
+
+.choice:hover {
+    background: #fff;
+    color: #764ba2;
+    transform: scale(1.15);
+    box-shadow: 0 8px 30px rgba(255,255,255,0.8);
+}

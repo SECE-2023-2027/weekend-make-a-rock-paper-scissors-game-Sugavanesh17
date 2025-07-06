@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Stone Paper Scissor Game</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <div class="game-container">
+        <h1>Stone Paper Scissor</h1>
+        <div class="choices">
+            <button class="choice" data-choice="stone">
+                <img src="https://img.icons8.com/ios-filled/50/000000/rock.png" alt="Stone" />
+                <span>Stone</span>
+            </button>
+            <button class="choice" data-choice="paper">
+                <img src="https://img.icons8.com/ios-filled/50/000000/paper.png" alt="Paper" />
+                <span>Paper</span>
+            </button>
+            <button class="choice" data-choice="scissor">
+                <img src="https://img.icons8.com/ios-filled/50/000000/scissors.png" alt="Scissor" />
+                <span>Scissor</span>
+            </button>
+        </div>
+
+        <div class="hands-container">
+            <div class="hand user-hand">
+                <img src="https://img.icons8.com/ios-filled/80/000000/rock.png" alt="User Hand" />
+            </div>
+            <div class="hand computer-hand">
+                <img src="https://img.icons8.com/ios-filled/80/000000/rock.png" alt="Computer Hand" />
+            </div>
+        </div>
+
+        <div class="result">
+            <p class="status">Make your choice to start the game!</p>
+            <p class="scoreboard">You: <span id="user-score">0</span> - Computer: <span id="computer-score">0</span></p>
+            <button id="reset-btn">Reset Game</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
